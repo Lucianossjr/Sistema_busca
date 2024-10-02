@@ -1,0 +1,34 @@
+def buscar_leis(termo_busca, leis):
+    resultados = []
+    for lei in leis:
+        if termo_busca.lower() in lei.lower():
+            resultados.append(lei)
+    return resultados
+
+def main():
+    leis = [
+        "Lei nº 1: Lei de Proteção ao Meio Ambiente Urbano.",
+        "Lei nº 2: Lei de Regulamentação do Uso de Energia Solar.",
+        "Lei nº 3: Lei de Proteção aos Direitos dos Consumidores.",
+        "Lei nº 4: Lei de Incentivo à Cultura Local.",
+        "Lei nº 5: Lei de Controle de Poluição Sonora.",
+        "Lei nº 6: Lei de Segurança Alimentar e Nutricional.",
+        "Lei nº 7: Lei de Promoção do Transporte Sustentável."
+        
+    ]
+
+    print("Bem-vindo ao sistema de busca de leis!")
+    
+    termo = input("\nDigite um termo para buscar nas leis: ")
+    resultados = buscar_leis(termo, leis)
+
+    if resultados:
+        print(f"\nResultados da busca para '{termo}':")
+        for resultado in resultados:
+            print(resultado)
+    else:
+        print(f"\nNenhum resultado encontrado para '{termo}'.")
+
+# Chamando a função principal
+if __name__ == "__main__":
+    main()
